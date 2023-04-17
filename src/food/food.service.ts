@@ -29,11 +29,11 @@ export class FoodService {
 
   async update(id: string, updateFoodDto: CreateFoodDto) {
     const findFood = await this.findOne(id);
-    const updateFood = await this.foodRepository.merge(
+    const updatedFood = await this.foodRepository.merge(
       findFood,
       updateFoodDto
     )
-    return this.foodRepository.save(updateFood);
+    return this.foodRepository.save(updatedFood);
   }
 
   async remove(id: string) {
